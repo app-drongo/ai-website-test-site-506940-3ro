@@ -2,9 +2,10 @@
 
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, X, Code } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { useSmartNavigation } from '@/hooks/useSmartNavigation';
+import Image from 'next/image';
 
 const DEFAULT_NAVIGATION = {
   brandName: 'TechFlow',
@@ -39,7 +40,14 @@ export default function Navigation(props: NavigationProps) {
               onClick={() => navigate('/')}
               className="flex items-center gap-2 hover:opacity-80 transition-opacity"
             >
-              <Code className="h-8 w-8 text-primary" />
+              <Image
+                src="https://pub-60de11c8c43b49ea9bd786eb6273aa91.r2.dev/1de7c6ed80ce732ef6ab1c1b975af032.svg"
+                alt="Logo"
+                width={120}
+                height={48}
+                className="h-10 md:h-12 lg:h-14 w-auto object-contain"
+                data-editable-src="logoSrc"
+              />
               <span
                 className="font-bold text-xl tracking-tight text-foreground"
                 data-editable="brandName"
@@ -95,7 +103,14 @@ export default function Navigation(props: NavigationProps) {
                 <div className="flex flex-col space-y-4 mt-8">
                   {/* Mobile Logo */}
                   <div className="flex items-center gap-2 pb-4 border-b border-border">
-                    <Code className="h-6 w-6 text-primary" />
+                    <Image
+                      src="https://pub-60de11c8c43b49ea9bd786eb6273aa91.r2.dev/1de7c6ed80ce732ef6ab1c1b975af032.svg"
+                      alt="Logo"
+                      width={120}
+                      height={48}
+                      className="h-8 md:h-10 w-auto object-contain"
+                      data-editable-src="logoSrc"
+                    />
                     <span className="font-bold text-lg text-foreground" data-editable="brandName">
                       {config.brandName}
                     </span>
